@@ -1,27 +1,26 @@
 <template>
   <section class="section">
     <div class="container">
-      <suspense>
-        <timeline />
-        <template #fallback>
-          Loading ...
-        </template>
-      </suspense>
+      <navbar/>
+      <router-view></router-view>
     </div>
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Timeline from '@/components/Timeline.vue';
+import Navbar from "@/components/Navbar.vue";
 export default defineComponent({
   name: 'App',
-  components: {
-    Timeline,
-  }
+  components: { Navbar },
 });
 </script>
 
 <style>
+
+.container {
+  width: 1180px;
+  margin: 0 auto;
+}
 
 </style>
